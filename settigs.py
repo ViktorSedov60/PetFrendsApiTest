@@ -2,8 +2,8 @@
 valid_email = "viktorsedov@gmail.com"
 valid_password = "qazxsw@12375"
 
-not_valid_email = "viktor@gmail.com"
-not_valid_password = "qazxsw12375"
+invalid_email = "viktor@gmail.com"
+invalid_password = "qazxsw12375"
 
 
 auth_key={

@@ -13,7 +13,8 @@ class TestPetFriends:
         assert status == 200
         assert 'key' in result
 
-    def test_get_not_api_key(self, email=not_valid_email, password=not_valid_password):
+    def test_get_not_api_key(self, email=invalid_email, password=invalid_password):
+        # тест на некорректные логин с паролем
         status, result = self.pf.get_api_key(email, password)
         assert status == 403
 
@@ -79,7 +80,8 @@ class TestPetFriends:
         assert result['name'] == name
 
     def tests_add_my_negat_pet(self, name='svin', animal_type='pig', age=5):
-
+        # добавляем пета с использованием ключа, забитого в settigs.py.
+        # В случае неправильного ключа тест выполняется с указанием status_code и incorrect auth_key
         try:
             status, result = self.pf.add_pet_not_photo(auth_key, name, animal_type, age)
             assert status == 200
